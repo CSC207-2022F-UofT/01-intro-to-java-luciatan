@@ -2,7 +2,6 @@
  * This file contains a few exercises to familiarize you with Java.
  * You should read this file from top-to-bottom. Any tasks you are to complete
  * are labelled with TODO
- *
  * For your convenience, we have also included references to the
  * relevant readings for each task.
  */
@@ -10,9 +9,7 @@
 /**
  *  1. In Java, no code can exist outside of a class. Unlike Python which uses
  *    functions, all code in Java uses methods.
- *
  *    For this exercise, all of our code is within the Basics class.
- *
  *    (Relevant reading: 1.1.1. Defining classes)
  */
 public class Basics {
@@ -43,7 +40,7 @@ public class Basics {
         /* TODO (Task 1): Write a line of code below that prints the string
          *                Hello World!
          */
-
+        System.out.println("Hello World!");
 
 
         /* 4. In Python, we could declare variables using a simple assignment
@@ -62,7 +59,7 @@ public class Basics {
          * TODO (Task 2): Create a variable named my_variable and assign it the
          *                value 100.
          */
-
+        int my_variable = 100;
 
 
         /* Do not remove the line below: if you did task 2 correctly, then
@@ -92,6 +89,8 @@ public class Basics {
          *                the following at each iteration:
          *                Current count: #
          *
+         *
+         *
          * e.g. the end result should look like:
          * Current count: 10
          * Current count: 9
@@ -99,7 +98,9 @@ public class Basics {
          * Current count: 1
          * Current count: 0
          */
-
+        for (int i = 10; i >= 0; i--) {
+            System.out.println("Current count: " + i);
+        }
 
     }
 
@@ -140,9 +141,14 @@ public class Basics {
          *                separated by spaces, so no loops are required, though
          *                you may use them if you wish.
          */
-        StringBuilder ret = new StringBuilder();
 
         // Fill in the rest of the body here
+        StringBuilder ret = new StringBuilder();
+        String [] list = to_split.split(" ");
+        for (String p : list) {
+            ret.append(p.charAt(0));
+        }
+
 
         return ret.toString();
     }
@@ -170,6 +176,13 @@ public class Basics {
          *                You can index into arrays as we do in Python
          *                (e.g. arr[i] gives you the item at index i).
          */
+        if (arr.length == 0 | arr.length == 1 ){
+            return current_sum;
+        }
+
+        for (int i = 1; i < arr.length; i = i+2 ){
+            current_sum = current_sum + arr[i];
+        }
 
         return current_sum;
     }
